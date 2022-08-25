@@ -24,7 +24,7 @@ $maxAmount = 80;
 
 if ($articlePrice > $maxAmount) {
     echo 'Trop cher !'. '<br>';
-} else if ($maxAmount && $maxAmount/2) {
+} else if ($articlePrice >= $maxAmount / 2 && $articlePrice <= $maxAmount) {
     echo 'Prix correct.'. '<br>';
 } else {
     echo 'Pas cher.'. '<br>';
