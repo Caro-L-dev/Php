@@ -1,0 +1,254 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/Raleway-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, white 10px), repeating-linear-gradient(#f1f1f1e1, #d6d6d6);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+
+    box-shadow: 4px 4px 5px #8080804d;
+}
+
+header h1 {
+    margin-left: 2rem;
+    border-left: 5px solid #338a61;
+    padding-left: 1rem;
+}
+
+header img {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+header nav {
+    display: flex;
+}
+
+header ul {
+    text-align: center;
+    margin: 1.2rem 0;
+    width: 100%;
+}
+
+header li {
+    padding: 0 1.2rem;
+}
+
+header nav a {
+    text-align: center;
+    border-bottom: 3px transparent solid;
+    padding: 1rem 0;
+    font-weight: 500;
+    transition-duration: 0.1s;
+    font-weight: bold;
+}
+
+header nav a.active,
+#signup a,
+#login a {
+    color: #3a3a3a;
+}
+
+nav a.active {
+    border-top: 3px solid #338a61;
+}
+
+#signup a,
+#login a {
+    color: #363535;
+    font-weight: 700;
+}
+
+p.btn {
+    display: none;
+    border-radius: 2rem;
+    box-shadow: 2px 2px 3px #f7f7f7;
+    background-color: #e3e3e3;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* Content */
+
+section {
+   width: 80rem;
+    margin: auto;
+    padding: 2rem;
+    box-sizing: border-box;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.row article {
+    width: 20rem;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px #8080804d;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+
+.row article:hover {
+    transform: scale(1.1);
+}
+
+figure {
+    width: 100%;
+    margin: 0;
+}
+
+figure div.img {
+    height: 15rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section img {
+    width: 100%;
+
+}
+
+figcaption {
+    box-sizing: border-box;
+    padding: 0 10px 10px 10px;
+}
+
+figcaption h3 {
+    margin: 1rem;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+figcaption p {
+    margin: 1rem;
+    margin-right: 1rem;
+    text-align: right;
+    font-weight: bolder;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+footer>div,
+footer ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#assistance * {
+    text-align: right;
+}
+
+/******************** Media Query ******************/
+
+@media screen and (max-width: 1200px) {
+    body {
+        width: 55%;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    p.btn {
+        display: block;
+    }
+
+    section {
+        display: flex;
+    }
+
+    .row {
+        flex-direction: column;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .row article {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    figure div.img {
+        height: 120px;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    section {
+        display: block;
+    }
+
+    .row {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    figure div.img {
+        height: 240px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+
+    figure div.img {
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    figure div.img {
+        height: 170px;
+    }
+
+}
