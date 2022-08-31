@@ -19,4 +19,21 @@ class Product extends Model
 
         return $listData;
     }
+
+    public function getProductsByCategory($id)
+    {
+        $bdd = $this->connect();
+
+        $query = $bdd->prepare('SELECT * FROM products WHERE category_id = ?');
+
+        $query->execute([$id]);
+
+        $listData = [];
+
+        while ($data = $query->fetch(PDO::FETCH_ASSOC)) {
+            $listData[] = $data;
+        }
+
+        return $listData;
+    }
 }
