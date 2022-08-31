@@ -8,4 +8,14 @@ class ShopController {
 
         include '../' . VIEW_DIRECTORY . '/index.php';
     }
+
+    public function displayCategory() {
+        $idCategory = $_GET['id'];
+
+        $productModel = new Product();
+
+        $products = $productModel->getProductsByCategory($idCategory);
+
+        include '../' . VIEW_DIRECTORY . '/category.php';
+    }
 }
