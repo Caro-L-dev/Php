@@ -16,37 +16,36 @@
 
 <body>
 
-    <?php include 'includes/header.php'; ?>
+    <?php
+    include 'includes/header.php';
+
+    if (isset($result) && $result === false) { ?>
+        <p class="bg-danger text-white text-center">Echec de l'inscription</p>
+    <?php }
+    ?>
+
 
     <section>
 
+        <h1 class="text-center">Inscription</h1>
 
+        <h2 class="text-center">-</h2>
 
-        <?php foreach ($products as $index => $product) {
-            if ($index % 3 == 0) {
-                echo '<div class="row"> ';
-            }
-        ?>
+        <div class="d-flex justify-content-center">
 
-            <article>
-                <a href="#">
-                    <figure>
-                        <div class="img">
-                            <img src="<?php echo '/' . $product['image']; ?>" alt="<?= $product['name'] ?>">
-                        </div>
-                        <figcaption>
-                            <h3><?php echo $product['name']; ?></h3>
-                            <p><?php echo $product['price']; ?> €</p>
-                        </figcaption>
-                    </figure>
-                </a>
-            </article>
+            <form class="d-flex flex-column w-50 p-3" action="/inscription/post" method="post">
+                <label for="firstname">Prénom</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required>
+                <label for="name">Nom</label>
+                <input type="text" name="name" id="name" placeholder="Nom" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+                <input class="btn btn-primary mt-3" type="submit" value="Valider">
+            </form>
 
-        <?php if ($index % 3 == 2) {
-                echo '</div> ';
-            }
-        } ?>
-
+        </div>
 
     </section>
 

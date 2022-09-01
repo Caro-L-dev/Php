@@ -82,14 +82,14 @@ nav a.active {
 
 #signup a,
 #login a {
-    color: #e9e9e9;
+    color: #ffffff;
     font-weight: 700;
 }
 
 p.btn {
     display: none;
     border-radius: 2rem;
-    box-shadow: 2px 2px 3px #f7f7f7;
+    box-shadow: 2px 2px 3px #ffffff;
     background-color: #e3e3e3;
     margin-right: 2rem;
     padding: 0.5rem;
@@ -162,6 +162,15 @@ figcaption p {
     margin-right: 1rem;
     text-align: right;
     font-weight: bolder;
+}
+
+/* === FORM ===*/
+
+.form{
+    background: #252525;
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
 }
 
 /* Footer */

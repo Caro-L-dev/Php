@@ -12,10 +12,6 @@ class Product extends Model
         while($data = $query->fetch(PDO::FETCH_ASSOC)) {
             $listData[] = $data;
         }
-        //var_dump($listData);
-
-      //  $listData = $query ->fetchAll(PDO::FETCH_ASSOC);
-       // var_dump($listData);
 
         return $listData;
     }
