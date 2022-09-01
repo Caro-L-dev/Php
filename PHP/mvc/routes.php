@@ -2,5 +2,7 @@
 
 $routes = [
     "/boutiques" => "ShopController@display",
-    "/categorie" => "ShopController@displayCategory",
+    "/categorie/{id}" => "ShopController@displayCategory",
+    "/inscription" => "UserController@signUp",
+    "/inscription/post" => "UserController@signUpPost",
 ];

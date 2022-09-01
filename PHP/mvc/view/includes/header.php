@@ -1,5 +1,3 @@
-
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
             <a class="navbar-brand" href="#">DKShoes</a>
@@ -16,11 +14,17 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Catégories
+                            Catégorie
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="http://mvc-dev/categorie?id=1">Hommes</a>
-                            <a class="dropdown-item" href="http://mvc-dev/categorie?id=2">Femmes</a>
+
+                            <?php foreach ($categories as $category) { ?>
+
+                                <a class="dropdown-item" href="http://mvc-dev/categorie/<?php echo $category['category_id']; ?>">
+                                    <?php echo $category['title']; ?>
+                                </a>
+                            <?php } ?>
+
                         </div>
                     </li>
                     <li class="nav-item">
@@ -32,8 +36,8 @@
                         <a class="nav-link" href="#">Panier</a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                            S'incrire
+                        <button type="button" class="nav-link text-dark" data-toggle="modal" data-target="#exampleModal">
+                            <a href="/inscription">S'inscrire</a>
                         </button>
                     </li>
                     <li class="nav-item">
@@ -42,50 +46,8 @@
                 </ul>
             </div>
         </nav>
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-        </button> -->
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="p-3" action="#" method="post">
-                            <div class="row mb-3">
-                                <label class="col-12 col-md-3 pl-0" for="firstname">Prénom</label>
-                                <input class="col-12 col-md-9" type="text" name="firstname" id="firstname" placeholder="Prénom">
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-12 col-md-3 pl-0" for="name">Nom</label>
-                                <input class="col-12 col-md-9" type="text" name="name" id="name" placeholder="Nom">
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-12 col-md-3 pl-0" for="email">Email</label>
-                                <input class="col-12 col-md-9" type="email" name="email" id="email" placeholder="Adresse email">
-                            </div>
-                            <div class="row mb-3">
-                                <label class="col-12 col-md-3 pl-0" for="password">Mot de passe</label>
-                                <input class="col-12 col-md-9" type="password" name="password" id="password" placeholder="Mot de passe">
-                            </div>
-                            <input type="hidden" name="action" value="signup">
-                            <div class="row mb-3 justify-content-end">
-                                <input class="" type="submit" value="Valider">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer h-0">
-                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button> -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Espace modal -->
+
+
     </header>

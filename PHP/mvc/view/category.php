@@ -9,8 +9,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     <?php include 'includes/header.php'; ?>
 
     <main class="container my-4">
-        <h1 class="text-center">Boutique</h1>
+        <h1 class="text-center">Catégorie</h1>
         <section>
             <h2>Derniers Ajouts</h2>
             <div class="row">
@@ -28,7 +28,7 @@
                     <article class="col-12 col-md-6 col-xl-3 mb-3">
                         <figure>
                             <div>
-                                <img class="w-100" src="<?php echo $product['image']; ?>" alt="<?= $product['name'] ?>">
+                                <img class="w-100" src="<?php echo '/' . $product['image']; ?>" alt="<?= $product['name'] ?>">
                             </div>
                             <figcaption class="px-3 py-2">
                                 <h3 class="h5"><?= $product['name'] ?></h3>
