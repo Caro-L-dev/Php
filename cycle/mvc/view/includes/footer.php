@@ -1,19 +1,19 @@
     <!-- Footer -->
-    <footer>
-        <div>
+    <footer class="d-flex">
+        <div >
             <h3>A propos</h3>
             <ul>
-                <li><a href="#">Fonctionnement du site</a></li>
-                <li><a href="#">Conditions générales de vente</a></li>
-                <li><a href="#">Données et confidentialité</a></li>
+                <li>Fonctionnement du site</li>
+                <li>Conditions générales de vente</li>
+                <li>Données et confidentialité</li>
             </ul>
         </div>
 
         <div id="assistance">
             <h3>Assistance</h3>
             <ul>
-                <li><a href="#">Centre d'aide</a></li>
-                <li><a href="#">Nous contacter</a></li>
+                <li>Centre d'aide</li>
+                <li>Nous contacter</li>
             </ul>
         </div>
     </footer>

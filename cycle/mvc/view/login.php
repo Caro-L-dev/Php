@@ -19,25 +19,23 @@
     <?php
     include 'includes/header.php';
 
-    if (isset($result) && $result === false) { ?>
-        <p class="bg-danger text-white text-center">Echec de l'inscription</p>
-    <?php } ?>
+    if (isset($error)) { ?>
+        <p class="bg-danger text-white text-center"><?php echo $error; ?></p>
+    <?php }
+    ?>
 
 
 
     <section>
 
-        <h1 class="text-center">Inscription</h1>
+        <h1 class="text-center">Connexion</h1>
 
-        <h2 class="text-center">-</h2>
+        <h2 class="text-center">Identifiants</h2>
 
         <div class="d-flex justify-content-center">
 
-            <form class="d-flex flex-column w-50 p-3" action="/inscription/post" method="post">
-                <label for="firstname">Prénom</label>
-                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required>
-                <label for="name">Nom</label>
-                <input type="text" name="name" id="name" placeholder="Nom" required>
+            <form class="d-flex flex-column w-50 p-3" action="/connexion/post" method="post">
+
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <label for="password">Mot de passe</label>

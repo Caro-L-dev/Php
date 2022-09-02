@@ -36,6 +36,7 @@
                         </div>
                         <figcaption>
                             <h3><?php echo $product['name']; ?></h3>
+                            <p class="text-dark text-center"><?php echo $product['description']; ?></p>
                             <p><?php echo $product['price']; ?> €</p>
                         </figcaption>
                     </figure>

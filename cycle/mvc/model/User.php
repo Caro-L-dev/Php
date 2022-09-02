@@ -13,4 +13,15 @@ class User extends Model
 
         return $query->execute($userData);
     }
+
+    public function getUserByEmail(string $email): bool|array
+    {
+        $bdd = $this->connect();
+
+        $query = $bdd->prepare('SELECT * FROM `users` WHERE `email` = ?');
+
+        $query->execute([$email]);
+
+        return $query->fetch();
+    }
 }

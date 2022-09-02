@@ -19,29 +19,41 @@
     <?php
     include 'includes/header.php';
 
-    if (isset($result) && $result === false) { ?>
-        <p class="bg-danger text-white text-center">Echec de l'inscription</p>
-    <?php } ?>
-
-
+    if (isset($error)) { ?>
+        <p class="bg-danger text-white text-center"><?php echo $error; ?></p>
+    <?php }
+    ?>
 
     <section>
 
-        <h1 class="text-center">Inscription</h1>
+        <h1 class="text-center">Ajouter un produit</h1>
 
         <h2 class="text-center">-</h2>
 
         <div class="d-flex justify-content-center">
 
-            <form class="d-flex flex-column w-50 p-3" action="/inscription/post" method="post">
-                <label for="firstname">Prénom</label>
-                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required>
+            <form class="d-flex flex-column w-50 p-3" action="/produit/ajouter/post" method="post" enctype="multipart/form-data">
+
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name" placeholder="Nom" required>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" placeholder="Description" required></textarea>
+
+                <label for="price">Prix</label>
+                <input type="text" name="price" id="price" placeholder="Prix" required>
+
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image" placeholder="Image" required>
+
+                <label for="category_id">Catégorie</label>
+                <select name="category_id" id="category_id">
+                    <?php foreach ($categories as $category) { ?>
+                        <option value="<?php echo $category['category_id'] ?>" ><?php echo $category['title']; ?></option>
+                        <?php } ?>
+                </select>
+                
+
                 <input class="btn btn-primary mt-3" type="submit" value="Valider">
             </form>
 

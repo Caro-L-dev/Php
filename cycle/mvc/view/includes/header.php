@@ -1,16 +1,29 @@
-<!-- Header -->
 <header>
 
-
-    <!-- Nav Bar -->
     <nav>
-
-        <a href="#">
-            <!-- <img src="images/logo.svg" alt="logo"> -->
+        <a href="/cycles">
             <h1 class="text-dark">DKVelo</h1>
         </a>
+
+
         <ul class="d-flex justify-content-end align-items-center">
-            <li><a href="#" class="active">Boutique</a></li>
+
+            <!-- welcome message when user is logged -->
+            <li class="mt-3">
+                    <?php if (isset($_SESSION['userId'])) { ?>
+                        <p>
+                            Bonjour
+                            <strong>
+                                <?php echo $_SESSION['username']; ?>
+                            </strong>
+                            , vous êtes pile à l'heure !
+                        </p>
+                    <?php } ?>
+                
+
+            </li>
+
+            <li><a href="/cycles" class="active">Boutique</a></li>
             <li><a class="text-dark" href="#">Panier</a></li>
             <li class=" dropdown">
                 <a class="dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,18 +41,29 @@
                 </div>
             </li>
             <div class="d-flex align-items-center">
-                <li id="login">
-                    <button class="btn btn-success text-white" >
-                    <a href="/inscription">Se connecter</a>
-                </button>
-            </li>
+
                 <li id="signup">
-                    <button class="btn btn-success text-white" >
+                    <button class="btn btn-primary text-white">
                         <a href="/inscription">
                             S'inscrire
                         </a>
                     </button>
                 </li>
+
+                <?php if (isset($_SESSION['userId'])) { ?>
+                    <li id="login">
+                        <button class="btn btn-danger text-white">
+                            <a href="/deconnexion">Se déconnecter</a>
+                        </button>
+                    </li>
+                <?php } else { ?>
+                    <li id="login">
+                        <button class="btn btn-success text-white">
+                            <a href="/connexion">Se connecter</a>
+                        </button>
+                    </li>
+                <?php } ?>
+
             </div>
         </ul>
     </nav>
